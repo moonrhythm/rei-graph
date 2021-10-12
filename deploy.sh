@@ -3,7 +3,7 @@ set -e
 URL=https://rei-graph.moonrhythm.io/deploy
 AUTH="basic $(cat .secret | tr -d '\n' | base64)"
 
-curl -XPOST $URL \
+curl -fXPOST $URL \
 	-H "content-type: application/json" \
 	-H "authorization: $AUTH" \
 	-d @- <<!
@@ -15,7 +15,7 @@ curl -XPOST $URL \
 }
 !
 
-curl -XPOST $URL \
+curl -fXPOST $URL \
 	-H "content-type: application/json" \
 	-H "authorization: $AUTH" \
 	-d @- <<!
