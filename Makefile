@@ -5,6 +5,7 @@ help:
 	# - make all
 
 # make deploy subgraph=subgraph/file.yaml
+.PHONY: deploy
 deploy:
 	./deploy.sh ${subgraph}
 
